@@ -1,0 +1,232 @@
+\documentclass[12pt]{article}
+	\usepackage[T1]{fontenc}
+	\usepackage[utf8]{inputenc}
+	\usepackage[british]{babel}
+	\usepackage[a4paper]{geometry}
+	\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2cm,rmargin=2cm,marginparwidth=70pt}
+	\setcounter{secnumdepth}{3}
+	\setcounter{tocdepth}{3}
+	\setlength{\parindent}{4em}
+	\setlength{\parskip}{1em}
+	\renewcommand{\baselinestretch}{1.5}
+	\usepackage{prettyref}
+	\usepackage{textcomp}
+	\usepackage{setspace}
+	\usepackage{indentfirst}
+	\usepackage{fancyhdr}
+	\usepackage{url}
+	\usepackage[normalem]{ulem}
+	\usepackage[table, fixpdftex]{xcolor}
+	\usepackage{algpseudocode}
+	\usepackage{bigstrut}
+	\usepackage{enumitem}
+
+	% package hyperref
+    \usepackage[hidelinks]{hyperref}
+  
+
+	% biblatex
+	\usepackage[style=authoryear,natbib=true,maxcitenames=2, maxbibnames=11,backend=biber,pagetracker=page,hyperref=true]{biblatex} \usepackage{csquotes}
+	\renewcommand*{\bibsetup}{%
+		\interlinepenalty=10000\relax % default is 5000
+		\widowpenalty=10000\relax
+		\clubpenalty=10000\relax
+		\raggedbottom
+		\frenchspacing
+        \biburlsetup}
+        
+	% fixes the page number of the first page of each chapter
+	\fancypagestyle{plain}{
+			\fancyhead{}
+			\renewcommand{\headrulewidth}{0pt}
+			\renewcommand{\footrulewidth}{0pt}
+			\fancyfoot[OC]{\begin{flushright}\thepage\end{flushright}}
+    }
+    
+	% fancy headers for the thesis
+	\fancyhead{}
+	\fancyhead[RO]{\slshape \nouppercase \rightmark}
+	\fancyfoot[OC]{\begin{flushright}\thepage\end{flushright}}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\setlength{\headheight}{14pt}
+
+	% add bibliography database
+	\addbibresource{BA Kopie.bib}
+	
+	% space between biblio items
+	\setlength\bibitemsep{1.7\itemsep} 
+	
+	% title without ""
+	\DeclareFieldFormat[inbook]{title}{#1}
+	% non-italic
+	\DeclareFieldFormat[online]{tlaitle}{#1} 
+	% title unquoted
+	\DeclareFieldFormat[article]{title}{#1} 
+	% no pp. 
+	\DeclareFieldFormat[article]{pages}{#1} 
+	% bold volume
+	\DeclareFieldFormat*{volume}{\mkbibbold{#1}\setpunctfont{\textbf}}
+	
+	% no in:
+	\renewbibmacro{in:}{} 
+	
+	% (volume)
+	\renewbibmacro*{volume+number+eid}{%
+			\printfield{volume}%
+			%\setunit*{\adddot}% DELETED
+			% \setunit*{\addnbspace}% NEW (optional); there's also \addnbthinspace
+			\printfield{number}%
+			% \setunit{\addcomma\space}%
+			\printfield{eid}}
+	\DeclareFieldFormat[article]{number}{\mkbibparens{#1}} 
+	
+	% edition.
+	\DeclareFieldFormat{edition}%
+	{(\ifinteger{#1}%
+			{\mkbibordedition{#1}\addthinspace{}ed.}%
+			{#1\isdot}).}
+	
+	% publisher and location position
+	\renewbibmacro*{publisher+location+date}{%
+			\printlist{publisher}%
+			\setunit*{\addcomma\space}%
+			\printlist{location}%
+			\setunit*{\addcomma\space}%
+			\usebibmacro{date}%
+			\newunit}
+	
+	% shortauthor before author
+	\renewbibmacro*{begentry}{%
+			\ifkeyword{Key}{\sffamily}{}%
+			\iffieldundef{shorthand}
+			{}
+			{\global\undef\bbx@lasthash
+					\printfield{shorthand}%
+					\addcolon\space}%
+			\ifboolexpr{test {\usebibmacro{bbx:dashcheck}} or test {\ifnameundef{shortauthor}}}%
+			{}%
+			{\printnames{shortauthor}%
+                    \addspace\textendash\space}}
+                    
+\title{Structure}
+\author{Leopold Ingenohl}
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+\subsection{Anecdotal Reference}
+\begin{center} 
+Objective: highlight the importance of the financial condition -- Background
+\end{center}
+
+    \begin{enumerate}
+        \item HNA
+        \item "The financial condition of investors is often in the center of financial journalism"
+
+        \item build up of around 9.9\% stake of around \$4bn in Deutsche Bank in 2017 
+        \item just below the 10\% threshold above which stake purchases must be approved by Germany’s financial watchdog 
+        \item China’s largest private conglomerate which over the past few years invested around \$40bn in businesses around the world 
+        \item Financing of the group has come under strain as a result of an official crackdown on risky financing at acquisitive private enterprises in China 
+        \item Liquidity isses 
+        \item Deutsch Stock down nearly 14\% in one year
+
+        \item cut down its stake to 8.8%
+        \item Heavily leveraged group
+        \item drawing scrutiny for the complex financing
+
+        \item Potential cash-shortfall
+        \item S\&P global rating downgrade citing a „deteriorating liquidity profile“
+    \end{enumerate}
+
+\subsection{Minority Acquisitions by Corporations} 
+\begin{center}
+Objective: Why do Companies make minority Acquisitions? -- Background
+\end{center} 
+Topics: Characteristics | Motivation | Reasoning 
+    \begin{enumerate}
+
+        \item Minority acquisitions are an important organizational choice, accounting for around 20\% of all acquisitions between 1990 and 2015.\citep{Huang2017}
+        \item Minority acquisitions tend to involve the transfer of a sizable portion of the target firm, with a mean purchase of 12\%. \citep{Ouimet2013}
+        \item Most firms, private and public, have assets on their books that can be considered to be non-operating assets. The second is investments in equities and bonds of other firms, sometimes for investment reasons and sometimes for strategic ones \citep{Damodaran2005}
+
+        \item Our results suggest that bidders use minority acquisitions when they confront informational or integration barriers. \citep{Huang2017}
+        \item Minority acquisitions can also help to serve as a stepping-stone towards full control. \citep{Huang2017}
+        \item A toehold often likely opens the door to a more intensive cooperation between the toeholder and the target \citep{Povel2014}
+        \item Taking a toehold allows the potential acquirer to interact with the target and its management \citep{Povel2014}
+        \item the possibility that business agreements, alliances, or joint ventures might be reached between target firms and corporate owners. \citep{Allen2000}
+
+
+        \item A toehold is defined as the raider’s ownership stake in the target firm prior to announcing his tender offer. SEC regulation specifies that anyone who acquires 5\%of a company’s outstanding shares must file Schedule 13(D) within ten days to disclose their identity, the number of shares owned, and their purpose in acquiring the shares. In practice, a bidder can continue purchasing target shares anonymously after hitting the 5\% threshold until the disclosure date. \citep{Goldman2005}
+
+    \end{enumerate}
+
+\subsection{SC 13D Filings - Toeholds \& Acquisitions} 
+\begin{center}
+Objective: Why do they behave activist? Active vs. Passive -- Background
+\end{center}
+Topics: Acquisitions | Friendly Takeovers | Hostile Takeovers | Joint-Venture | Activism | Comparison HF
+
+    \begin{enumerate}
+        \item Schedule 13D filings must be made within 10 days of acquiring a beneficial ownership of 5\% or greater of the outstanding common stock of a U.S. public company. \citep{Brigida2012}
+        \item Filing a Schedule 13D allows the investor to behave in an active manner. \citep{Brigida2012}  
+        \item starting with Mikkelson and Ruback (1985), note that mergers and takeovers are often preceded by the acquisition of a minority stake in the target. \citep{Greenwood2009}
+        \item Implication of intention of possible merger and takeover, means they have to file as activists
+
+        \item Definition activist HF as example -- In the spirit of Pound (1992), we define an entrepreneurial activist as an investor who buys a large stake in a publicly held corporation with the intention to bring about change and thereby realize a profit on the investment \citep{Klein2009}
+
+        \item If: Acquisitions / friendly takeovers, hostile takeovers
+        \item Acquire a minority position to access greater information about the target firm and better assess the potential for a majority acquisition. \citep{Ouimet2013}
+        \item Minority acquisitions can also help to serve as a stepping-stone towards full control. \citep{huang}
+        \item A toehold is defined as the raider’s ownership stake in the target firm prior to announcing his tender offer. \citep{Goldman2005}
+        \item makes the toehold bidder a more aggressive competitor in the presence of rivals. \citep{Mitchell2011}
+    \end{enumerate}
+
+\subsection{Abnormal Returns for the Subject}
+\begin{center}
+Objective: Why are corporations interesting? -- Problem Statement
+\end{center}
+Topics: Comparison HF | Source of Runup | Corporate Activism 
+    \begin{enumerate}
+        \item see Thesis.
+        
+        \item % Comparison HF
+        In recent studies of what happens to the target's stock  \citet{Collin-Dufresne2015} observed a positive significant market reaction upon a more general sample of Schedule 13D filings inculding all investor types. \citet{Brav2008} have shown a favorable market reaction -- 7\%-8\% average abnormal returns in the (-20|20) event window -- particularly to Schedule 13D's filed by hedge funds. Similar results have been shown by \citet{Klein2009} who observe 10.2\% average abnormal stock returns specifically for hedge fund targets.
+        % Corporate Activism 
+        Furthermore the runup is even higher if the acquirer is a private investor or a non-financial corporation \citep{Brigida2012}. This is matching with \citet{Akhigbe2007} findings who observed greater gains for the target's stock if the partial position was initiated by a corporate bidder.
+        Concluding, all filings are followed by positive market reactions however, those submitted by corporations seem to have a stronger impact.
+
+        \item is still largely unanswered where the announcement premium (and the upward drift in stock prices thereafter, for that matter) comes from \citep{Greenwood2009}
+        \item \citet{Greenwood2009} address this issue by presuming that the runup is a reflection of investors' expectations of the target firm being acquired at a premium to the current stock price.
+
+    \end{enumerate}
+
+
+\subsection{Corporate Investments \& Corporate Condition}
+\begin{center}
+Objective: Hypothesis -- Research Aim 
+\end{center}
+Topics: Abnormal Returns | Financial Condition | Activism | Hypothesis | Conclusion
+    \begin{enumerate}
+        \item Abnormal returns -- Company Condition 
+        \item Bridge: As they file SC13D's they behave in an activist manner which is in the sense of \citet{Klein2009} the intention to bring about change
+        \item Hypotheses: In order to be able to bring change, the filer/activist corporation needs to be in a sufficient condition 
+    
+        \item Especially in the case of acquisition: By giving these filings a higher probability of acquisition and tracing the runups back to this assumption, the financial condition of the investor -- in order to carry out a possible acquisition -- should play an important role. For the reason that a strong investor could increase the likelihood of takeover and hence explain the strong abnormal returns.
+
+        \item Based on these findings, the economic significance of activist minority acquisitions by corporation is apparent and the link between the financial condition of the investor and the subsequent abnormal returns on the target stock is an interesting issue to examine. 
+    \end{enumerate}
+
+\subsection{Procedure}
+\begin{center}
+Objective: What is the structure of the paper?
+\end{center}
+
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+
+
+\end{document}
