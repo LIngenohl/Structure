@@ -81,7 +81,7 @@
       <file>Structure.bcf</file>
     </requires>
     <requires type="editable">
-      <file>BA Kopie.bib</file>
+      <file>BA copy.bib</file>
     </requires>
   </external>
 </requests>
